@@ -40,12 +40,16 @@ a:hover {
     color: teal;
 }
 
-@media all and (max-width: 900px){
+@media all and (max-width: 700px){
     body {
         margin: 0;
     }
 
     nav {
+        width: 80vw;
+    }
+
+    .main {
         width: 80vw;
     }
 }
