@@ -44,4 +44,8 @@ a:hover {
     body {
         margin: 0;
     }
+
+    nav {
+        width: 80vw;
+    }
 }
