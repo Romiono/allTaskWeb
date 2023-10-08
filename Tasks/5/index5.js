@@ -12,7 +12,12 @@ function onClick(e) {
     const item = document.getElementById('select')
     const count = document.getElementById('Count')
     let result = document.getElementById('result')
-    result.value = obj[item.value] * count.value + '$'
+    if (/^\d+$/.test(count.value)) {
+        result.value = obj[item.value] * count.value + '$'
+    }
+    else {
+        alert('для ввода доступны только числа')
+    }
     e.preventDefault()
 }
 const btn = document.getElementById('button')
