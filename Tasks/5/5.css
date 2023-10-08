@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 @font-face {
     font-family: "Bebas Neue";
     font-style: normal;
@@ -10,6 +14,15 @@
     font-style: normal;
     font-weight: 400;
     src: url("../../fonts/Montserrat-Regular.ttf");
+}
+
+p, a, input, select {
+    font-family: "Montserrat";
+    font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Bebas Neue";
 }
 
 .root {
@@ -29,16 +42,6 @@ footer {
     box-shadow: -5px 0 1px black;
 }
 
-p, a {
-    font-family: "Montserrat";
-    font-size: 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Bebas Neue";
-}
-
-
 .logo {
     width: 70px;
     height: 70px;
@@ -55,39 +58,8 @@ h1, h2, h3, h4, h5, h6 {
     transition: 0.25s ease;
 }
 
-.front-block {
-    border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 35px;
-    background: rgba(255, 255 ,255, .4);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 1px dimgrey;
-}
-
-table {
-    table-layout: fixed;
-    border-collapse: collapse;
-    border: 3px solid black;
-    width: 95%;
-}
-
-th {
-    border: 1px solid black;
-}
-
-td {
-    border: 1px solid black;
-}
-
-.chet-item {
-    background-color: bisque;
-}
-
 .spin-logo {
     animation: 20s spin linear infinite;
-}
-
-.nav-item-wraper {
-    text-align: center;
 }
 
 @keyframes spin {
@@ -97,4 +69,12 @@ td {
     100% {
         transform: rotate(720deg);
     }
+}
+
+.front-block {
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 35px;
+    background: rgba(255, 255 ,255, .4);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 1px dimgrey;
 }
