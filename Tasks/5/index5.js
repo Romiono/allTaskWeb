@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded and parsed");
+});
+
 const obj = {
     1: 100,
     2: 200,
