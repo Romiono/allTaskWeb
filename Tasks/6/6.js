@@ -12,7 +12,7 @@ const list = {
 function ubdate() {
     console.log('changed')
     let select = document.getElementById('select')
-    let result = 0;
+    let result = 0
     let radioD = document.getElementById('radios')
     let checkD = document.getElementById('checkD')
 
