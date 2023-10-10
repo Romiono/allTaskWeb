@@ -55,6 +55,9 @@ function update() {
         }
     }
 
+    const count = document.getElementById('Count');
+    result = result*count.value;
+
     let endPrice = document.getElementById("result");
     endPrice.value = result;
 }
@@ -63,6 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM loaded and parsed");
     let select = document.getElementById("select");
     select.addEventListener("change", update);
+
+    const count = document.getElementById('Count');
+    count.addEventListener('change', update)
 
     let radio = document.getElementsByName("radio");
     radio.forEach((e) => {
