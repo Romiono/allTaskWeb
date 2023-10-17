@@ -33,6 +33,7 @@ a {
     color: #0f0f0f;
     width: 100%;
     text-align: center;
+    transition: ease .15s;
 }
 
 a:hover {
