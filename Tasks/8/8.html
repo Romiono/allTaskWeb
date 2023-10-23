@@ -38,29 +38,30 @@
     <div class="container mx-auto d-flex flex-column align-items-center justify-content-center">
         <button class="btn btn-outline-success w-50" id="btn">Показать форму</button>
     </div>
-    <div class="container d-flex justify-content-center align-items-center m-0" id="pop-up">
+    <div     class="justify-content-center align-items-center m-0 w-100"
+             id="pop-up">
         <form id="form" class="front-block p-4">
             <div>
                 <label for="name" class="form-label">имя</label>
-                <input type="text" class="form-control" id="name">            </div>
+                <input type="text" class="form-control" id="name" name="name">            </div>
             <div class="mb-1">
                 <label for="first-name" class="form-label">фамилия</label>
-                <input type="text" class="form-control" id="first-name">
+                <input type="text" class="form-control" id="first-name" name="lastName">
             </div>
             <div class="mb-3">
                 <label for="e-mail" class="form-label">e-mail</label>
-                <input type="text" class="form-control" id="e-mail">
+                <input type="text" class="form-control" id="e-mail" name="mail">
             </div>
             <div>
                 <label for="password" class="form-label">пароль</label>
-                <input type="text" class="form-control" id="password">
+                <input type="text" class="form-control" id="password" name="pass">
             </div>
             <div class="mb-4">
                 <label for="any" class="form-label">что-то</label>
-                <input type="text" class="form-control" id="any">
+                <input type="text" class="form-control" id="any" name="any">
             </div>
             <div class="btn">
-                <button class="btn btn-outline-success">Отправить</button>
+                <button class="btn btn-outline-success" id="submit">Отправить</button>
             </div>
         </form>
     </div>
