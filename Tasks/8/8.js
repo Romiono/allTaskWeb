@@ -26,7 +26,7 @@ async function post(user) {
 btn.addEventListener('click', () => {
     popUp.style.display = 'flex';
     btn.style.display = 'none';
-    history.pushState({form: 'form'}, 'Title', '?form.html');
+    history.pushState({form: 'form'}, 'Title', '/form.html');
 })
 
 popUp.addEventListener('click', (e) => {
@@ -51,6 +51,7 @@ submit.addEventListener('click', async (e) => {
     const password = document.getElementById('password')
     const any = document.getElementById('any')
     e.preventDefault()
+    closePopUp()
     const user = {
         name: name.value,
         lastName: lastName.value,
