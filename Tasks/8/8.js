@@ -35,10 +35,12 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function clear(arr) {
-        arr.foreach((e) => {
-            e[0].value = '';
-        })
+        arr.forEach(el => {
+            localStorage.setItem(el[1], "");
+            el[0].value = "";
+        });
     }
+
 
     btn.addEventListener('click', (e) => {
         popUp.style.display = 'flex';
@@ -72,8 +74,9 @@ window.addEventListener("DOMContentLoaded", () => {
             any: any.value
         }
         console.log(user);
-        clear(form);
+        clear(formArr);
         await post(user);
 
     });
-});
+
+})
