@@ -3,6 +3,13 @@ window.addEventListener("DOMContentLoaded", () => {
     const popUp = document.getElementById('pop-up');
     const form = document.getElementById('form')
     const submit = document.getElementById('submit')
+    const name = document.getElementById('name');
+    const lastName = document.getElementById('first-name');
+    const mail = document.getElementById('e-mail');
+    const password = document.getElementById('password');
+    const any = document.getElementById('any');
+    const check = document.getElementById('check');
+    const formArr = [[name, 'name'], [lastName, 'lastName'], [mail, 'mail'], [password, 'password'], [any, 'any']];
 
     function closePopUp(e) {
         history.back();
@@ -45,27 +52,18 @@ window.addEventListener("DOMContentLoaded", () => {
         e.stopPropagation();
     })
 
+    formArr.forEach((e) => {
+        e[0].value = localStorage.getItem(e[1])
+        e[0].addEventListener('change', () => {
+            localStorage.setItem(e[1], e[0].value);
+        });
+    });
 
     submit.addEventListener('click', async (e) => {
-        const name = document.getElementById('name');
-        const lastName = document.getElementById('first-name');
-        const mail = document.getElementById('e-mail');
-        const password = document.getElementById('password');
-        const any = document.getElementById('any');
-        const check = document.getElementById('check');
-        const form = [[name, 'name'], [lastName, 'lastName'], [mail, 'mail'], [password, 'password'], [any, 'any']];
+
         e.preventDefault();
         closePopUp();
-        // e[0].value = localStorage.getItem(e[1]);
-        // e[0].addEventListener("change",() =>{
-        //     localStorage.setItem(e[1],e[0].value);
-        form.forEach((e) => {
-            e[0].value = localStorage.getItem(e[1])
-            e[0].addEventListener('change', () => {
-                localStorage.setItem(e[1], e[0].value);
-            });
-        });
-        alert(localStorage.getItem('name'));
+
         const user = {
             name: name.value,
             lastName: lastName.value,
