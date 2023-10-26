@@ -8,10 +8,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const mail = document.getElementById('e-mail');
     const password = document.getElementById('password');
     const any = document.getElementById('any');
-    const check = document.getElementById('check');
+    //const check = document.getElementById('check');
     const formArr = [[name, 'name'], [lastName, 'lastName'], [mail, 'mail'], [password, 'password'], [any, 'any']];
 
-    function closePopUp(e) {
+    function closePopUp() {
         history.back();
         popUp.style.display = 'none';
         btn.style.display = 'block';
@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
             let result = await response.json();
             alert(result.message);
         } catch (e) {
+            console.log(e);
         }
 
     }
@@ -42,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
         popUp.style.display = 'flex';
         btn.style.display = 'none';
         history.pushState({form: 'form'}, 'form', '#form.html');
@@ -55,7 +56,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     formArr.forEach((e) => {
-        e[0].value = localStorage.getItem(e[1])
+        e[0].value = localStorage.getItem(e[1]);
         e[0].addEventListener('change', () => {
             localStorage.setItem(e[1], e[0].value);
         });
@@ -79,4 +80,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
     });
 
-})
+});
