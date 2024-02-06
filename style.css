@@ -13,6 +13,7 @@ body {
 
 .main{
     width: 60vw;
+    display: flex;
 }
 
 nav {
@@ -23,6 +24,8 @@ nav {
     border-radius: 50px;
     box-shadow: 0 0 50px #0f0f0f;
     overflow: hidden;
+    width: 45%;
+    margin: 20px;
 }
 
 a {
