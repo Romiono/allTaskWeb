@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
+const cors = require('cors')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ const pool = mysql.createPool({
 
 // Промежуточное ПО для обработки JSON данных в теле запроса
 app.use(express.json());
+app.use(cors());
 
 // Обработчик GET запросов на корневом маршруте
 app.get('/users', async (req, res) => {

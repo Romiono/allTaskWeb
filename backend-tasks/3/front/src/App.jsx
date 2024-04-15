@@ -1,6 +1,7 @@
 import {useState} from 'react'
-import './App.css'
 import {useForm} from "react-hook-form";
+import {Link} from "react-router-dom";
+import UsersApi from "./Api/UsersApi.js";
 
 function App() {
     const {
@@ -9,9 +10,11 @@ function App() {
         getValues,
         formState: {errors},
     } = useForm();
-    const onSubmit = () => {
-        console.log(getValues());
+    const onSubmit = async () => {
+        await UsersApi.postNewUser(getValues());
     }
+
+
     return (
         <div className={'flex flex-col justify-center items-center w-full h-dvh gap-3'}>
             <h1 className={'text-3xl'}>Форма</h1>
@@ -41,7 +44,7 @@ function App() {
                                 <path
                                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z"/>
                             </svg>
-                            <input {...register('username')} type="text" className="grow" placeholder="Username"/>
+                            <input {...register('fullname')} type="text" className="grow" placeholder="Username"/>
                         </label>
                         <label className="input input-bordered flex items-center gap-2 w-full bg-neutral-800">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
@@ -56,7 +59,7 @@ function App() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M21 6v2H3V6zM3 18h9v-2H3zm0-5h18v-2H3z"/>
                             </svg>
-                            <input {...register('text')} type='text' className="grow" placeholder='Какой-то текст'/>
+                            <input {...register('biography')} type='text' className="grow" placeholder='Какой-то текст'/>
                         </label>
                         <div
                             className='flex justify-start items-center gap-4 w-full p-1 px-4 bg-neutral-800 rounded-md'>
@@ -89,7 +92,7 @@ function App() {
                             </div>
                         </div>
                         <div className='flex justify-start items-center gap-4 w-full'>
-                            <select {...register('language')} multiple={true} className="select select-bordered w-full bg-neutral-800 ">
+                            <select {...register('languages')} multiple={true} className="select select-bordered w-full bg-neutral-800 ">
                                 <option value="Python">Python</option>
                                 <option value="JavaScript">JavaScript</option>
                                 <option value="Java">Java</option>
@@ -104,6 +107,7 @@ function App() {
                         </div>
                         <button  className={'btn btn-success btn-outline w-full'}>Отправить</button>
                     </form>
+                    <Link to={'/users'} className={'btn bg-neutral-700 '}>Посмотреть базу данных</Link>
                 </div>
             </div>
         </div>
