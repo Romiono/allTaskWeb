@@ -24,7 +24,7 @@ import axios from "axios";
 export default class UsersApi {
     static async getAll() {
         try {
-            const response = await axios.get('http://localhost:3000/users');
+            const response = await axios.get('http://romashka-serv.ru/users');
             return response.data;
 
         }
@@ -35,7 +35,7 @@ export default class UsersApi {
     }
     static async postNewUser(user) {
         try {
-            const response = await axios.post('http://localhost:3000/add', {...user});
+            const response = await axios.post('http://romashka-serv.ru/add', {...user});
             console.log(response.status);
         }
         catch (e) {
