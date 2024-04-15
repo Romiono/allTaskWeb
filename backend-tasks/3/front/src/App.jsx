@@ -107,7 +107,7 @@ function App() {
                         </div>
                         <button  className={'btn btn-success btn-outline w-full'}>Отправить</button>
                     </form>
-                    <Link to={'/users'} className={'btn bg-neutral-700 '}>Посмотреть базу данных</Link>
+                    <Link to={'/db'} className={'btn bg-neutral-700 '}>Посмотреть базу данных</Link>
                 </div>
             </div>
         </div>

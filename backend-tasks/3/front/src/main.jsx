@@ -7,11 +7,11 @@ import DB from "./Pages/DB.jsx";
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: '/app',
         element: <App/>
     },
     {
-        path: '/users',
+        path: '/db',
         element: <DB/>
     }
 ]);

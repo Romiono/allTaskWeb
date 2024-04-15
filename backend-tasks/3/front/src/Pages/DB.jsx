@@ -44,7 +44,7 @@ const Db = () => {
                     </tbody>
                 </table>
             </div>
-            <Link to={'/'} className={'btn bg-neutral-700'}>Вернуться</Link>
+            <Link to={'/app'} className={'btn bg-neutral-700'}>Вернуться</Link>
         </div>
     );
 };
